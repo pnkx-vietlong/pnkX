@@ -1,0 +1,5 @@
+Input Size: 1280x1280
+Conv(3,2,0) => Output Size:639x639
+Conv(3,2,0) => Output Size:319x319
+Conv(3,2,0) => Output Size:159x159
+Conv(3,2,0) => Output Size:79x79
