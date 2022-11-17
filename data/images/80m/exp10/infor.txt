@@ -1,0 +1,44 @@
+Input Shape: 2160x3840
+Coordinates:
+	Lying_Person: 1731 1067 1766 1106	=> Shape: (35x39)
+	Lying_Person: 1851 995 1895 1033	=> Shape: (44x38)
+	Lying_Person: 1784 1137 1837 1198	=> Shape: (53x61)
+
+Resize to 416Output Shape: 416x416
+Coordinates:
+	Lying_Person: 188 205 191 213	=> Shape: (3x8)
+	Lying_Person: 201 192 205 199	=> Shape: (4x7)
+	Lying_Person: 193 219 199 231	=> Shape: (6x12)
+
+Conv(3,2,0)
+Output Size: 207x207
+Coordinates:
+	Lying_Person: 93 102 95 106	=> Shape: (2x4)
+	Lying_Person: 100 95 102 99	=> Shape: (2x4)
+	Lying_Person: 96 109 99 115	=> Shape: (3x6)
+Save image at: data/images/80m/exp10/0.jpg
+
+Conv(3,2,0)
+Output Size: 103x103
+Coordinates:
+	Lying_Person: 46 50 47 52	=> Shape: (1x2)
+	Lying_Person: 49 47 50 49	=> Shape: (1x2)
+	Lying_Person: 47 54 49 57	=> Shape: (2x3)
+Save image at: data/images/80m/exp10/1.jpg
+
+Conv(3,2,0)
+Output Size: 51x51
+Coordinates:
+	Lying_Person: 22 24 23 25	=> Shape: (1x1)
+	Lying_Person: 24 23 24 24	=> Shape: (0x1)
+	Lying_Person: 23 26 24 28	=> Shape: (1x2)
+Save image at: data/images/80m/exp10/2.jpg
+
+Conv(3,2,0)
+Output Size: 25x25
+Coordinates:
+	Lying_Person: 10 11 11 12	=> Shape: (1x1)
+	Lying_Person: 11 11 11 11	=> Shape: (0x0)
+	Lying_Person: 11 12 11 13	=> Shape: (0x1)
+Save image at: data/images/80m/exp10/3.jpg
+

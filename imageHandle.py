@@ -13,7 +13,6 @@ def resizeImage(img,img_size):
 def writeImage(img,path):
     files = list(filter(lambda f: f.endswith('.jpg') and not (f.startswith('Original Image') or f.startswith('Resized Image')),os.listdir(path)))
     files.sort()
-    print(files)
     if len(files) == 0:
         cv2.imwrite(os.path.join(path,'0.jpg'),img)
     else:
@@ -37,9 +36,14 @@ def coordinatesAfterResize(img,bboxes,size):
     for i in range(len(bboxes)):
         # print(bboxes[i][1:])
         xmin,ymin,xmax,ymax = bboxes[i][1:]
+        # print('In coordinatesAfterResize')
+        # print(size,img.shape[1],img.shape[0])
+        # print(xmin,ymin,xmax,ymax)
         new_xmin = int(np.round(xmin*x_scale))
         new_ymin = int(np.round(ymin*y_scale))
         new_xmax= int(np.round(xmax*(x_scale)))
         new_ymax= int(np.round(ymax*y_scale))
+        # print(xmin,'x',x_scale)
         bboxes[i][1:] = [new_xmin,new_ymin,new_xmax,new_ymax]
+        # print(bboxes[i][1:])
     return bboxes

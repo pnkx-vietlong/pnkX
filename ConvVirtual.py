@@ -29,11 +29,12 @@ class ConvVirtual:
             for y in range(W):
                 # cv2.imwrite(os.path.join(self.path,'images',str(12*x+y)+'.jpg'),self.image[x*self.stride:x*self.stride+self.kernel_size,y*self.stride:y*self.stride+self.kernel_size])
                 self.output[x,y,:] = cv2.resize(self.image[x*self.stride:x*self.stride+self.kernel_size,y*self.stride:y*self.stride+self.kernel_size],(1,1))
-        print('Shape after conv:',H,' x',W)
+        # print('Shape after conv:',H,' x',W)
         return self.output
 
     def coordinates(self,xmin,ymin,xmax,ymax):
         # print(self.kernel_size,self.stride,self.padding)
+        # print(xmin,ymin,xmax,ymax)
         new_xmin = int((xmin-self.kernel_size+2*self.padding)//self.stride+1)
         new_ymin = int((ymin-self.kernel_size+2*self.padding)//self.stride+1)
         new_xmax = int((xmax-self.kernel_size+2*self.padding)//self.stride+1)
@@ -56,9 +57,11 @@ def action(distance,size):
     writeTxtFile1(savingDir,[img.shape[0],img.shape[1]],bboxes)
     
     # Resize Image
+
+    bboxes = coordinatesAfterResize(img,bboxes,size)
+
     img = resizeImage(img,size)
     
-    bboxes = coordinatesAfterResize(img,bboxes,size)
 
     cv2.imwrite(os.path.join(savingDir,'Resized Image'+'.jpg'),img)
 

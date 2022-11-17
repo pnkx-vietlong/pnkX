@@ -26,7 +26,7 @@ def mkdir(distance):
     else:
         numbers.sort()
         number = numbers[-1]
-        print('number',number)
+        # print('number',number)
         os.makedirs(os.path.join(dir,'exp'+str(number+1)))
         numbers.append('exp'+str(number+1))
     path = os.path.join(dir,numbers[-1])        
